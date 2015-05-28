@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Gravity Forms CSS Customizer
-Description: Plugin that lets you keep only parts of the default Gravity Forms CSS
+Description: Plugin that lets you keep only the good parts from the default Gravity Forms CSS
 Version: 1.0.0
 Author: Jennifer Web Design
 Author URI: https://www.jenniferwebdesignlasvegas.com/
