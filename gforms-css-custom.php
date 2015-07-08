@@ -9,6 +9,7 @@ Author URI: https://www.jenniferwebdesignlasvegas.com/
 
 
 //------------------------------------------
+
 if (class_exists("GFForms")) {
 
     GFForms::include_addon_framework();
@@ -95,24 +96,20 @@ if (class_exists("GFForms")) {
                                     "name"  => "validation"
                                 ),
                                 array(
-                                    "label" => "Checkout Credit Card Styling",
-                                    "name"  => "credit_card"
+                                    "label" => "Time Field Styling",
+                                    "name"  => "time"
                                 ),
                                 array(
-                                    "label" => "Payment Field Styling",
-                                    "name"  => "payment"
+                                    "label" => "List Field Styling",
+                                    "name"  => "list"
                                 ),
                                 array(
-                                    "label" => "Print Styling",
-                                    "name"  => "print"
+                                    "label" => "Gravity Forms Columns Styling",
+                                    "name"  => "columns"
                                 ),
                                 array(
-                                    "label" => "Password Strength Checker",
-                                    "name"  => "pwdstrength"
-                                ),
-                                array(
-                                    "label" => "Progress Bar",
-                                    "name"  => "progressbar"
+                                    "label" => "Pagination and Page Break Styling",
+                                    "name"  => "pagination"
                                 )
                             )
                         )
@@ -258,7 +255,7 @@ if (class_exists("GFForms")) {
         }
 
         public function is_credit_card_active() {
-            $gform_css = $this->get_plugin_setting( 'credit_card' );
+            $gform_css = $this->get_plugin_setting( 'time' );
 
             if ($gform_css) {
                 return true;
@@ -267,7 +264,7 @@ if (class_exists("GFForms")) {
         }
 
         public function is_payment_active() {
-            $gform_css = $this->get_plugin_setting( 'payment' );
+            $gform_css = $this->get_plugin_setting( 'list' );
 
             if ($gform_css) {
                 return true;
@@ -276,7 +273,16 @@ if (class_exists("GFForms")) {
         }
 
         public function is_print_active() {
-            $gform_css = $this->get_plugin_setting( 'print' );
+            $gform_css = $this->get_plugin_setting( 'columns' );
+
+            if ($gform_css) {
+                return true;
+            }
+            return false;
+        }
+
+        public function is_print_active() {
+            $gform_css = $this->get_plugin_setting( 'pagination' );
 
             if ($gform_css) {
                 return true;
@@ -287,5 +293,4 @@ if (class_exists("GFForms")) {
     }
    
     $simpleAddOn = new GFCSSCustom();
-
 }
