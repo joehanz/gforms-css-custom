@@ -24,26 +24,6 @@
 }
 <?php }
 
-	if ($simpleAddOn->is_validation_active()) { ?>
-.gform_wrapper .gfield_description {
-	font-size: .875em;
-	line-height: 1.5;
-	clear: both;
-	font-family: inherit;
-	letter-spacing: normal;
-}
-
-.gform_wrapper .gfield_description+.gform_wrapper .gfield_description.validation_message, 
-.gform_wrapper .ginput_container+.gfield_description.validation_message {
-	margin-top: .375em;
-}
-
-.gform_wrapper .gfield_description.validation_message, .gform_wrapper .top_label .gfield_description.validation_message {
-	padding: .625em 0!important;
-}
-
-<?php }
-
 	if ($simpleAddOn->is_honeypot_active()) { ?>
 .gform_validation_container,
 .gform_wrapper .gform_validation_container,
@@ -173,6 +153,23 @@ body .gform_wrapper img.ui-datepicker-trigger {
 	if ($simpleAddOn->is_validation_active()) { ?>
 
 /* VALIDATION ERRORS CSS */
+
+.gform_wrapper .gfield_description {
+    font-size: .875em;
+    line-height: 1.5;
+    clear: both;
+    font-family: inherit;
+    letter-spacing: normal;
+}
+
+.gform_wrapper .gfield_description+.gform_wrapper .gfield_description.validation_message, 
+.gform_wrapper .ginput_container+.gfield_description.validation_message {
+    margin-top: .375em;
+}
+
+.gform_wrapper .gfield_description.validation_message, .gform_wrapper .top_label .gfield_description.validation_message {
+    padding: .625em 0!important;
+}
 
 .gform_wrapper .gfield_required {
     color: #790000;

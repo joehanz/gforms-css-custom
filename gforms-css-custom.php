@@ -3,7 +3,7 @@
 Plugin Name: Gravity Forms CSS Customizer
 Description: Plugin that lets you keep only the good parts from the default Gravity Forms CSS
 Version: 1.0.0
-Author: Jennifer Web Design
+Author: Ollie Murphy
 Author URI: https://www.jenniferwebdesignlasvegas.com/
 */
 
@@ -28,6 +28,16 @@ if (class_exists("GFForms")) {
         protected $_title = "Gravity Forms CSS Customizer";
         
         protected $_short_title = "CSS Customizer";
+
+        public function pre_init(){
+            parent::pre_init();
+            // add tasks or filters here that you want to perform during the class constructor - before WordPress has been completely initialized
+            // this function is basically my constructor
+
+            $this->turn_off_default_css();
+
+            $this->enable_gform_datepicker_css();
+        }
 
         public function init(){
             parent::init();
@@ -277,9 +287,5 @@ if (class_exists("GFForms")) {
     }
    
     $simpleAddOn = new GFCSSCustom();
-
-    $simpleAddOn->turn_off_default_css();
-
-    $simpleAddOn->enable_gform_datepicker_css();
 
 }
