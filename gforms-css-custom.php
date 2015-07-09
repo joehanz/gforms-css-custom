@@ -108,7 +108,7 @@ if (class_exists("GFForms")) {
                                     "name"  => "columns"
                                 ),
                                 array(
-                                    "label" => "Pagination and Page Break Styling",
+                                    "label" => "Pagination and Page Break St",
                                     "name"  => "pagination"
                                 )
                             )
@@ -254,7 +254,7 @@ if (class_exists("GFForms")) {
             return false;
         }
 
-        public function is_credit_card_active() {
+        public function is_time_active() {
             $gform_css = $this->get_plugin_setting( 'time' );
 
             if ($gform_css) {
@@ -263,7 +263,7 @@ if (class_exists("GFForms")) {
             return false;
         }
 
-        public function is_payment_active() {
+        public function is_list_active() {
             $gform_css = $this->get_plugin_setting( 'list' );
 
             if ($gform_css) {
@@ -272,7 +272,7 @@ if (class_exists("GFForms")) {
             return false;
         }
 
-        public function is_print_active() {
+        public function is_columns_active() {
             $gform_css = $this->get_plugin_setting( 'columns' );
 
             if ($gform_css) {
@@ -281,7 +281,7 @@ if (class_exists("GFForms")) {
             return false;
         }
 
-        public function is_print_active() {
+        public function is_pagination_active() {
             $gform_css = $this->get_plugin_setting( 'pagination' );
 
             if ($gform_css) {
