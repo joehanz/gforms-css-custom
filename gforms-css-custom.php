@@ -40,11 +40,6 @@ if (class_exists("GFForms")) {
             $this->enable_gform_datepicker_css();
         }
 
-        public function init(){
-            parent::init();
-            add_action('gform_after_submission', array($this, 'after_submission'), 10, 2);
-        }
-
         public function plugin_settings_fields() {
             return array(
                 array(
@@ -104,11 +99,27 @@ if (class_exists("GFForms")) {
                                     "name"  => "list"
                                 ),
                                 array(
+                                    "label" => "Really Simple Captcha Styling",
+                                    "name"  => "captcha"
+                                ),
+                                array(
+                                    "label" => "Math Challenge Styling",
+                                    "name"  => "math"
+                                ),
+                                array(
+                                    "label" => "Password Strength Indicator",
+                                    "name"  => "password"
+                                ),
+                                array(
+                                    "label" => "Credit Card Styling",
+                                    "name"  => "credit"
+                                ),
+                                array(
                                     "label" => "Gravity Forms Columns Styling",
                                     "name"  => "columns"
                                 ),
                                 array(
-                                    "label" => "Pagination and Page Break St",
+                                    "label" => "Pagination and Page Break Styling",
                                     "name"  => "pagination"
                                 )
                             )
@@ -289,6 +300,43 @@ if (class_exists("GFForms")) {
             }
             return false;
         }
+
+        public function is_captcha_active() {
+            $gform_css = $this->get_plugin_setting( 'captcha' );
+
+            if ($gform_css) {
+                return true;
+            }
+            return false;
+        }
+
+        public function is_math_active() {
+            $gform_css = $this->get_plugin_setting( 'math' );
+
+            if ($gform_css) {
+                return true;
+            }
+            return false;
+        }
+
+        public function is_password_active() {
+            $gform_css = $this->get_plugin_setting( 'password' );
+
+            if ($gform_css) {
+                return true;
+            }
+            return false;
+        }
+
+        public function is_credit_active() {
+            $gform_css = $this->get_plugin_setting( 'credit' );
+
+            if ($gform_css) {
+                return true;
+            }
+            return false;
+        }
+
 
     }
    
