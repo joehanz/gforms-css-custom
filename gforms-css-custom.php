@@ -5,6 +5,8 @@ Description: Plugin that lets you keep only the good parts from the default Grav
 Version: 1.0.0
 Author: Ollie Murphy
 Author URI: https://www.jenniferwebdesignlasvegas.com/
+License: GPL-2.0+
+License URI: http://www.gnu.org/licenses/gpl-2.0.txt
 */
 
 
