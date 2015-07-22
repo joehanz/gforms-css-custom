@@ -18,7 +18,7 @@ if (class_exists("GFForms")) {
 
     class GFCSSCustom extends GFAddOn {
 
-        protected $_version = "1.1";
+        protected $_version = "1.0.0";
         
         protected $_min_gravityforms_version = "1.7.9999";
         
@@ -343,4 +343,18 @@ if (class_exists("GFForms")) {
     }
    
     $simpleAddOn = new GFCSSCustom();
+
+    // add class to address field if active
+    if ( $simpleAddOn->is_address_active() ) {
+
+        add_filter('gform_field_css_class', 'gcc_add_address_class', 0, 2);
+        function gcc_add_address_class( $css_class, $field ) {
+            
+            if ($field['type'] === 'address') { 
+                $css_class = $css_class . " gcc-address";
+            }
+
+            return $css_class;
+        }
+    }
 }

@@ -64,7 +64,6 @@ body .gform_wrapper img.ui-datepicker-trigger {
 }
 
 .gform_wrapper ul.gfield_radio li {
-    overflow: hidden;
     padding: 0!important
 }
 
@@ -150,10 +149,6 @@ body .gform_wrapper img.ui-datepicker-trigger {
 
     if ($simpleAddOn->is_checkbox_active() ) { ?>
 
-        .gform_wrapper ul.gfield_checkbox li {
-            overflow: hidden;
-        }
-
         .gform_wrapper ul.right_label li ul.gfield_checkbox li,
         .gform_wrapper form ul.right_label li ul.gfield_checkbox li,
         .gform_wrapper ul.left_label li ul.gfield_checkbox li,
@@ -173,6 +168,7 @@ body .gform_wrapper img.ui-datepicker-trigger {
 
         .gform_wrapper .gfield_checkbox li {
             position: relative;
+            margin: 0 0 .5em;
         }
 
         .gform_wrapper ul.gfield_checkbox {
@@ -192,7 +188,7 @@ body .gform_wrapper img.ui-datepicker-trigger {
         .gform_wrapper .gfield_checkbox li input[type=checkbox],
         .gform_wrapper .gfield_checkbox li input {
             float: left;
-            margin-top: 2px;
+            margin-top: 7px;
         }
 
         .gform_wrapper ul.gfield_checkbox li input[type="checkbox"]:checked+label {
@@ -200,12 +196,12 @@ body .gform_wrapper img.ui-datepicker-trigger {
         }
 
         .gform_wrapper.gf_browser_safari .gfield_checkbox li input[type=checkbox] {
-            margin-top: 4px;
+            margin-top: 7px;
         }
 
         .gform_wrapper.gf_browser_chrome .gfield_checkbox li input[type=checkbox],
         .gform_wrapper.gf_browser_chrome .gfield_checkbox li input {
-            margin-top: 4px;
+            margin-top: 7px;
         }
 
         .gform_wrapper.gf_browser_ie .gfield_checkbox li input[type=checkbox],
@@ -244,9 +240,13 @@ body .gform_wrapper img.ui-datepicker-trigger {
 .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
     background-color: #FFDFE0;
     margin-bottom: .375em!important;
-    padding: 0;
+    padding: 10px 20px;
     border-top: 1px solid #C89797;
-    border-bottom: 1px solid #C89797
+    border-bottom: 1px solid #C89797;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 .gform_wrapper li.gfield.gfield_creditcard_warning {
     padding-bottom: 1em!important;
@@ -271,19 +271,19 @@ li.gfield+li.gfield.gfield_creditcard_warning {
     margin-top: 1em!important
 }
 .gform_wrapper .top_label .gfield_error .ginput_container {
-    max-width: 99%
+    max-width: none
 }
 .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.ginput_container,
 .gform_wrapper li.gfield_html {
-    max-width: 97.5%
+    max-width: none
 }
 .gform_wrapper .top_label .gfield_error {
-    width: 97%
+    width: 100%;
 }
 .gform_wrapper .top_label .gfield_error input.large,
 .gform_wrapper .top_label .gfield_error select.large,
 .gform_wrapper .top_label .gfield_error textarea.textarea {
-    width: 97.5%
+    width: 100%
 }
 .gform_wrapper .left_label .gfield_error input.large,
 .gform_wrapper .left_label .gfield_error select.large,
@@ -300,18 +300,13 @@ li.gfield+li.gfield.gfield_creditcard_warning {
     margin-top: .75em;
     margin-bottom: .75em!important
 }
-.gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_description,
-.gform_wrapper li.gfield.gfield_error.gfield_contains_required div.ginput_container,
-.gform_wrapper li.gfield.gfield_error.gfield_contains_required fieldset legend.gfield_label,
-.gform_wrapper li.gfield.gfield_error.gfield_contains_required label.gfield_label {
-    margin-left: 6px
-}
+
 .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_time_ampm.ginput_container,
 .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_time_minute.ginput_container {
     margin-left: 0
 }
 .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.gfield_description {
-    max-width: 97.5%;
+    max-width: none;
     padding-right: 6px!important
 }
 .gform_wrapper li.gfield.gfield_error.gfield_contains_required div.ginput_container,
@@ -1017,5 +1012,106 @@ div.gf_page_steps+div.validation_error {
     top: -1px;
     left: 4px;
 }
+
+<?php } // end if statement
+
+    if ($simpleAddOn->is_time_active()) { ?>
+.gform_wrapper .gfield_time_hour,
+.gform_wrapper .gfield_time_minute,
+.gform_wrapper .gfield_date_month,
+.gform_wrapper .gfield_date_day,
+.gform_wrapper .gfield_date_year {
+    width: 70px;
+    vertical-align: top;
+    display: -moz-inline-stack;
+    display: inline-block;
+    zoom: 1;
+}
+
+.gform_wrapper .gfield_date_month,
+.gform_wrapper .gfield_date_day,
+.gform_wrapper .gfield_date_year {
+    margin-right: 12px;
+}
+
+.gform_wrapper .gfield_date_dropdown_month,
+.gform_wrapper .gfield_date_dropdown_day,
+.gform_wrapper .gfield_date_dropdown_year {
+    vertical-align: top;
+    display: -moz-inline-stack;
+    display: inline-block;
+    zoom: 1;
+}
+
+.gform_wrapper .gfield_date_dropdown_month,
+.gform_wrapper .gfield_date_dropdown_day,
+.gform_wrapper .gfield_date_dropdown_year {
+    margin-right: 6px;
+}
+
+.gform_wrapper .gfield_time_ampm {
+    vertical-align: top;
+    display: -moz-inline-stack;
+    display: inline-block;
+    zoom: 1;
+}
+
+.gform_wrapper .gfield_time_ampm select {
+    width: 60px !important;
+}
+
+.gform_wrapper .gfield_time_hour input,
+.gform_wrapper .gfield_time_minute input,
+.gform_wrapper .gfield_date_month input,
+.gform_wrapper .gfield_date_day input,
+.gform_wrapper .gfield_date_year input {
+    width: 70% !important;
+}
+
+.gform_wrapper .gfield_date_month,
+.gform_wrapper .gfield_date_day,
+.gform_wrapper .gfield_date_year {
+    width: 50px;
+    float: left;
+}
+
+.gform_wrapper .gfield_date_month input,
+.gform_wrapper .gfield_date_day input,
+.gform_wrapper .gfield_date_year input {
+    width: 85% !important;
+}
+
+.gform_wrapper .gfield_time_hour input[type=text], 
+.gform_wrapper .gfield_time_minute input[type=text],
+.gform_wrapper .gfield_time_ampm select {
+    outline-style: none;
+    font-size: 11px;
+    font-family: inherit;
+    padding: 5px 2px 5px 2px;
+    letter-spacing: normal;
+}
+
+.gform_wrapper .gfield_time_hour label,
+.gform_wrapper .gfield_time_minute label,
+.gform_wrapper .gfield_date_month label,
+.gform_wrapper .gfield_date_day label,
+.gform_wrapper .gfield_date_year label{
+    display: block;
+    margin: 3px 0;
+    font-size: 11px;
+    letter-spacing: 0.5pt;
+}
+
+<?php } // end if statement
+
+    if ( $simpleAddOn->is_address_active() ) { ?>
+
+.gform_wrapper .gcc-address label {
+    display: block;
+    margin: 3px 0;
+    font-size: 11px;
+    letter-spacing: 0.5pt;
+}
+
 
 <?php } ?>
